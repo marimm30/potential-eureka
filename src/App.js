@@ -13,7 +13,7 @@ function Formulario() {
       <input type="email" id="email" placeholder="E-mail"/>
       <input type="password" id="password" placeholder="Senha"/>
       <ButtonAcessar/>
-    </Panel>
+    </h1>
   );
 }
 
