@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import ReactDom from 'react-dom';
+import Popup from 'reactjs-popup';
 
 
 class Usuario extends React.Component {
@@ -29,10 +31,15 @@ function Formulario() {
   );
 }
 
-
 function App() {
   return (
     <div>
+      if (email | senha != this.state){
+        Popup.alert('Usuário ou senha incorretos!')
+      }
+      else{
+        Popup.alert('Acessado com sucesso!')
+      }
 
     </div>
   );
