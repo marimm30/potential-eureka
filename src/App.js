@@ -9,7 +9,7 @@ function ButtonAcessar() {
 
 function Formulario() {
   return (
-    <h1 title="Login">
+      <h1 title="Login">
       <input type="email" id="email" placeholder="E-mail"/>
       <input type="password" id="password" placeholder="Senha"/>
       <ButtonAcessar/>
@@ -27,3 +27,14 @@ function App() {
 }
 
 export default App;
+
+class Usuario extends React.Component {
+
+  constructor(props){
+    super(props)
+    this.state ={
+      email: 'eduardo.lino@pucpr.br',
+      senha: '123456'
+    }
+  }
+}
