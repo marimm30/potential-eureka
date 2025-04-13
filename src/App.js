@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+function ButtonAcessar() {
+  return (
+    <button>Acessar</button>
+  );
+}
+
+function Formulario() {
+  return (
+    <h1 title="Login">
+      <input type="email" id="email" placeholder="E-mail"/>
+      <input type="password" id="password" placeholder="Senha"/>
+      <ButtonAcessar/>
+    </Panel>
+  );
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
     </div>
   );
 }
