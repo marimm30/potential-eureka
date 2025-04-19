@@ -12,7 +12,21 @@ function App() {
     senha: '123456'
   }
 
-  /* Necessário adicionar mensagem de aviso se o login foi bem-sucedido ou não */
+  const handleLogin = () => {
+    if (!email || !senha) {      /* para alertar de informação faltando */
+      setMsg('Preencha todos os campos!');  
+      setTipoMsg('erro');
+      return;
+    }
+    if (email === loginCorreto.email && senha === loginCorreto.senha) {
+      setMsg('Acessado com sucesso!');
+      setTipoMsg('sucesso');
+    } else {
+      setMsg('Usuário ou senha incorretos!');
+      setTipoMsg('erro');
+    }
+  };
+  
   
   return (
     <div>
