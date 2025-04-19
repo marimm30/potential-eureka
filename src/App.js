@@ -1,49 +1,32 @@
 import React from 'react';
 import './App.css';
-import ReactDom from 'react-dom';
-import Popup from 'reactjs-popup';
+import React, { useState } from 'react'; /*importando para utilizar o useState*/
 
-
-class Usuario extends React.Component {
-
-  constructor(props){
-    super(props)
-    this.state ={
-      email: 'eduardo.lino@pucpr.br',
-      senha: '123456'
-    }
-  }
-}
-
-function ButtonAcessar() {
-  return (
-    <button>Acessar</button>
-  );
-}
-
-function Formulario() {
-  return (
-      <h1 title="Login">
-      <input type="email" id="email" value = {this.state.nome} placeholder="E-mail"/>
-      <input type="password" id="password" value = {this.state.senha} placeholder="Senha"/>
-      <ButtonAcessar/>
-    </h1>
-  );
-}
 
 function App() {
+  const[email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const[mensagem, setMensagem] = userEvent('');
+  const[tipoMens, setTipoMens] = useState('');
+  const usuarioCadastrado = {
+    email: 'mariliz.machado@pucpr.edu.br',
+    senha: '123456'
+  }
+
+  /* Necessário adicionar mensagem de aviso se o login foi bem-sucedido ou não */
+  
   return (
     <div>
-      if (email | senha != this.state){
-        Popup.alert('Usuário ou senha incorretos!')
-      }
-      else{
-        Popup.alert('Acessado com sucesso!')
-      }
+     <h1 title="Login"/>
 
-    </div>
-  );
+     <input type="email" id="email" value = {email} placeholder="E-mail" onChange={(e) => setEmail(e.target.value)}/>
+
+     <input type="password" id="password" value = {senha} placeholder="Senha"onChange={(e) => setSenha(e.target.value)}/>
+
+     <button>Acessar</button>
+     </div>
+     );
+
 }
 
 export default App;
-
