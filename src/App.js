@@ -6,7 +6,7 @@ import React, { useState } from 'react'; /*importando para utilizar o useState*/
 function App() {
   const[email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const[msg, setMsg] = userEvent('');
+  const[msg, setMsg] = useState('');
   const[tipoMsg, setTipoMsg] = useState(''); /* para classificação de tipo: auxiliar na variaedade do design */
   const usuarioCadastrado = {
     email: 'mariliz.machado@pucpr.edu.br',
