@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react'; /*retificado a forma de importação*/
 import './App.css';
-import React, { useState } from 'react'; /*importando para utilizar o useState*/
 
 
 function App() {
   const[email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const[mensagem, setMensagem] = userEvent('');
+  const[mensagem, setMensagem] = useState('');/*corrigido */
   const[tipoMens, setTipoMens] = useState('');
   const usuarioCadastrado = {
     email: 'mariliz.machado@pucpr.edu.br',
