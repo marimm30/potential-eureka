@@ -1,7 +1,6 @@
 import React, { useState } from 'react'; /*retificado a forma de importação*/
 import './App.css';
 
-
 function App() {
   const[email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
