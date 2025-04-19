@@ -2,17 +2,6 @@ import React from 'react';
 import './App.css';
 import React, { useState } from 'react'; /*importando para utilizar o useState*/
 
-
-function App() {
-  const[email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const[msg, setMsg] = useState('');
-  const[tipoMsg, setTipoMsg] = useState(''); /* para classificação de tipo: auxiliar na variaedade do design */
-  const usuarioCadastrado = {
-    email: 'mariliz.machado@pucpr.edu.br',
-    senha: '123456'
-  }
-
   const handleLogin = () => {
     if (!email || !senha) {      /* para alertar de informação faltando */
       setMsg('Preencha todos os campos!');  
@@ -27,7 +16,7 @@ function App() {
       setTipoMsg('erro');
     }
   };
-  
+
   
   return (
     <div>
