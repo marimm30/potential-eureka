@@ -2,18 +2,21 @@ import React from 'react';
 import './App.css';
 import React, { useState } from 'react'; /*importando para utilizar o useState*/
 
+  const handleLogin = () => {
+    if (!email || !senha) {      /* para alertar de informação faltando */
+      setMsg('Preencha todos os campos!');  
+      setTipoMsg('erro');
+      return;
+    }
+    if (email === loginCorreto.email && senha === loginCorreto.senha) {
+      setMsg('Acessado com sucesso!');
+      setTipoMsg('sucesso');
+    } else {
+      setMsg('Usuário ou senha incorretos!');
+      setTipoMsg('erro');
+    }
+  };
 
-function App() {
-  const[email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const[mensagem, setMensagem] = userEvent('');
-  const[tipoMens, setTipoMens] = useState('');
-  const usuarioCadastrado = {
-    email: 'mariliz.machado@pucpr.edu.br',
-    senha: '123456'
-  }
-
-  /* Necessário adicionar mensagem de aviso se o login foi bem-sucedido ou não */
   
   return (
     <div>
