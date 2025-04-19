@@ -6,14 +6,23 @@ import React, { useState } from 'react'; /*importando para utilizar o useState*/
 function App() {
   const[email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const[mensagem, setMensagem] = userEvent('');
-  const[tipoMens, setTipoMens] = useState('');
+  const[msg, setMsg] = userEvent('');
+  const[tipoMsg, setTipoMsg] = useState(''); /* para classificação de tipo: auxiliar na variaedade do design */
   const usuarioCadastrado = {
     email: 'mariliz.machado@pucpr.edu.br',
     senha: '123456'
   }
 
-  /* Necessário adicionar mensagem de aviso se o login foi bem-sucedido ou não */
+  const msgLogin = () => {
+    if (email === usuarioCadastrado.email && senha === usuarioCadastrado.senha) {
+      setMsg('Acessado com sucesso!');
+      setTipoMsg('sucesso');
+    } else {
+      setMensagem('Usuário ou senha incorretos!');
+      setTipoMensagem('erro');
+    }
+  };
+
   
   return (
     <div>
