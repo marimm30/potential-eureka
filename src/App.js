@@ -13,16 +13,21 @@ function App() {
     senha: '123456'
   }
 
-  const msgLogin = () => {
-    if (email === usuarioCadastrado.email && senha === usuarioCadastrado.senha) {
+  const handleLogin = () => {
+    if (!email || !senha) {      /* para alertar de informação faltando */
+      setMsg('Preencha todos os campos!');  
+      setTipoMsg('erro');
+      return;
+    }
+    if (email === loginCorreto.email && senha === loginCorreto.senha) {
       setMsg('Acessado com sucesso!');
       setTipoMsg('sucesso');
     } else {
-      setMensagem('Usuário ou senha incorretos!');
-      setTipoMensagem('erro');
+      setMsg('Usuário ou senha incorretos!');
+      setTipoMsg('erro');
     }
   };
-
+  
   
   return (
     <div>
