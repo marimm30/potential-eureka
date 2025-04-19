@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css';
-import ReactDom from 'react-dom';
-import Popup from 'reactjs-popup';
 
 
 class Usuario extends React.Component {
@@ -21,7 +19,7 @@ function ButtonAcessar() {
   );
 }
 
-function Formulario() {
+function App() {
   return (
       <h1 title="Login">
       <input type="email" id="email" value = {this.state.nome} placeholder="E-mail"/>
@@ -31,19 +29,7 @@ function Formulario() {
   );
 }
 
-function App() {
-  return (
-    <div>
-      if (email | senha != this.state){
-        Popup.alert('Usuário ou senha incorretos!')
-      }
-      else{
-        Popup.alert('Acessado com sucesso!')
-      }
 
-    </div>
-  );
-}
 
 export default App;
 
