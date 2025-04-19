@@ -5,20 +5,20 @@ import './App.css';
 function App() {
   const[email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const[mensagem, setMensagem] = useState('');/*corrigido */
-  const[tipoMens, setTipoMens] = useState('');
+  const[msg, setMsg] = useState('');/*corrigido */
+  const[tipoMsg, setTipoMsg] = useState('');
   const usuarioCadastrado = {
     email: 'mariliz.machado@pucpr.edu.br',
     senha: '123456'
   }
 
-  const handleLogin = () => {
+  const msgLogin = () => {
     if (!email || !senha) {      /* para alertar de informação faltando */
       setMsg('Preencha todos os campos!');  
       setTipoMsg('erro');
       return;
     }
-    if (email === loginCorreto.email && senha === loginCorreto.senha) {
+    if (email === usuarioCadastrado.email && senha === usuarioCadastrado.senha) {
       setMsg('Acessado com sucesso!');
       setTipoMsg('sucesso');
     } else {
