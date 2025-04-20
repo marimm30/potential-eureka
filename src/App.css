@@ -57,7 +57,7 @@
 
 .login-box button {
   padding: 10px;
-  background-color: #031324;
+  background-color: #010a13;
   color: white;
   border: none;
   border-radius: 7px;
@@ -65,7 +65,7 @@
 }
 
 .login-box button:hover {
-  background-color: #125ea6;
+  background-color: #010a13;
 }
 
 .mensagem-erro {
