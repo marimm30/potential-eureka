@@ -1,22 +1,24 @@
-import React, { useState } from 'react'; /*retificado a forma de importação*/
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const[email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const[msg, setMsg] = useState('');/*corrigido */
-  const[tipoMsg, setTipoMsg] = useState('');
+  const [msg, setMsg] = useState('');
+  const [tipoMsg, setTipoMsg] = useState('');
+
   const usuarioCadastrado = {
     email: 'mariliz.machado@pucpr.edu.br',
     senha: '123456'
-  }
+  };
 
   const msgLogin = () => {
-    if (!email || !senha) {      /* para alertar de informação faltando */
-      setMsg('Preencha todos os campos!');  
+    if (!email || !senha) {
+      setMsg('Preencha todos os campos!');
       setTipoMsg('erro');
       return;
     }
+
     if (email === usuarioCadastrado.email && senha === usuarioCadastrado.senha) {
       setMsg('Acessado com sucesso!');
       setTipoMsg('sucesso');
@@ -26,16 +28,16 @@ function App() {
     }
   };
   
-  
   return (
-    <div>
-     <h1 title="Login"/>
+  <div className="login-box">
+      <h1 title="Login">Login</h1>
 
      <input type="email" id="email" value = {email} placeholder="E-mail" onChange={(e) => setEmail(e.target.value)}/>
 
      <input type="password" id="password" value = {senha} placeholder="Senha"onChange={(e) => setSenha(e.target.value)}/>
 
-     <button>Acessar</button>
+     <button onClick={msgLogin}>Acessar</button>
+
      </div>
      );
 
