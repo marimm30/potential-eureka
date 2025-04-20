@@ -38,7 +38,12 @@ function App() {
 
      <button onClick={msgLogin}>Acessar</button>
 
-     </div>
+     {msg && (
+        <p className={tipoMsg === 'erro' ? 'mensagem-erro' : 'mensagem-sucesso'}>
+          {msg}
+        </p>
+      )}
+    </div>
      );
 
 }
