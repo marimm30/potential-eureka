@@ -36,7 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
 .login-box {
   width: 300px;
   margin: 80px auto;
@@ -58,10 +57,10 @@
 
 .login-box button {
   padding: 10px;
-  background-color: #0e66be;
+  background-color: #031324;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
   cursor: pointer;
 }
 
@@ -86,4 +85,3 @@
   text-align: center;
 
 }
-
