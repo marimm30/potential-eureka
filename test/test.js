@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
 describe('Testes da tela de login', () => {
+    beforeEach(() => { render(<App />)})
 
   test('deve renderizar inputs de email e senha e botão Acessar', () => {
     render(<App />);
