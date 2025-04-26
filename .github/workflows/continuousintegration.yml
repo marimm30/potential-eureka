@@ -19,6 +19,7 @@ jobs:
 
       - name: Build project
         run: npm run build
+  
 
   deploy:
     needs: build
@@ -29,3 +30,23 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: omkartapale/react-deployment-gh-pages@v1.0.0
+
+
+  telegram:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+    - name: Send Telegram alert on failure
+      if: failure()
+      run: |
+        curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
+        -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
+        -d text="🚨 Atenção: A build do projeto ${{ github.repository }} falhou no commit ${{ github.sha }}. Veja detalhes em: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
