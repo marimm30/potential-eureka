@@ -15,10 +15,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-
       - name: Install dependencies
         run: npm ci
-
       - name: Build project
         run: npm run build
 
@@ -64,12 +62,3 @@ jobs:
           -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
           -d text="📢 Novo Pull Request criado: ${{ github.event.pull_request.title }}\nAutor: ${{ github.event.pull_request.user.login }}\nLink: ${{ github.event.pull_request.html_url }}"
 
-  telegram_pull_request_approved_alert:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
-    steps:
-      - name: Send Telegram alert for Approved Pull Request
-        run: |
-          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
-          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-          -d text="✅ Pull Request aprovado: ${{ github.event.pull_request.title }}\nAutor: ${{ github.event.pull_request.user.login }}\nLink: ${{ github.event.pull_request.html_url }}"
