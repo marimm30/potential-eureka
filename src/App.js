@@ -27,7 +27,7 @@ function App() {
       setTipoMsg('erro');
     }
   };
-  
+  /*Edit: adicionada a opção de criar uma conta se não tiver cadastro*/
   return (
   <div className="login-box">
       <h1 title="Login">Login</h1>
@@ -37,7 +37,7 @@ function App() {
      <input type="password" id="password" value = {senha} placeholder="Senha"onChange={(e) => setSenha(e.target.value)}/>
 
      <button onClick={msgLogin}>Acessar</button>
-
+     <p>Não tem conta? <Link to="/cadastro">Cadastre-se</Link></p>   
      {msg && (
         <p className={tipoMsg === 'erro' ? 'mensagem-erro' : 'mensagem-sucesso'}>
           {msg}
