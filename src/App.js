@@ -37,7 +37,7 @@ function App() {
      <input type="password" id="password" value = {senha} placeholder="Senha"onChange={(e) => setSenha(e.target.value)}/>
 
      <button onClick={msgLogin}>Acessar</button>
-     <p>Não tem conta? <Link to="/cadastro">Cadastre-se</Link></p>   
+     <p>Não tem conta?Cadastre-se</p>   
      {msg && (
         <p className={tipoMsg === 'erro' ? 'mensagem-erro' : 'mensagem-sucesso'}>
           {msg}
